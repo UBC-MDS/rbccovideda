@@ -1,12 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<img src="man/figures/rbc_logo.png" align="left" height="50"/>
+
 # rbccovideda
 
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/UBC-MDS/rbccovideda/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rbccovideda/actions)
-[![codecov](https://codecov.io/gh/UBC-MDS/rbccovideda/branch/master/graph/badge.svg?token=BHMAm2mkUK)](https://codecov.io/gh/UBC-MDS/rbccovideda)
+[![codecov](https://codecov.io/gh/UBC-MDS/rbccovideda/branch/main/graph/badge.svg?token=BHMAm2mkUK)](https://codecov.io/gh/UBC-MDS/rbccovideda)
 
 <!-- badges: end -->
 
@@ -19,13 +21,15 @@ the latest daily data on COVID-19 in British Columbia, which it provides
 in csv format along case-, lab- and regional-specific features as well
 as in comprehensive ArcGIS format via the [COVID-19
 webpage](http://www.bccdc.ca/health-info/diseases-conditions/covid-19/data)
-(under “Download the data”). This package leverages daily case-specific
-COVID-19 data, allowing users to conveniently download the latest case
-data, and - per specified date range interval - compute several key
-statistics, visualize time series progression along age-related and
-regional parameters, and generate exploratory data analysis in the form
-of histogram figures supporting on-demand analysis. COVID-19 case detail
-parameters extracted using this package:
+(under “Download the data”).
+
+[rbccovideeda](https://ubc-mds.github.io/rbccovideda) leverages daily
+case-specific COVID-19 data, allowing users to conveniently download the
+latest case data, and - per specified date range interval - compute
+several key statistics, visualize time series progression along
+age-related and regional parameters, and generate exploratory data
+analysis in the form of histogram figures supporting on-demand analysis.
+COVID-19 case detail parameters extracted using this package:
 
 -   Reported_Date (in YYYY-MM-DD format)
 -   HA (provincial health region, e.g., “Vancouver Coast Health”)
@@ -35,7 +39,8 @@ parameters extracted using this package:
 
 ## Installation
 
-You can install the development version of `rbccovideda` from
+You can install the development version of
+[rbccovideda](https://ubc-mds.github.io/rbccovideda) from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -73,9 +78,9 @@ devtools::install_github("UBC-MDS/rbccovideda")
 
 ## Usage
 
-`rbccovideda` can be used to download and compute summary statistics,
-generate exploratory data analysis histogram plots, and plot time series
-chart data as follows:
+[rbccovideda](https://ubc-mds.github.io/rbccovideda/) can be used to
+download and compute summary statistics, generate exploratory data
+analysis histogram plots, and plot time series chart data as follows:
 
 ``` r
 ## load library
@@ -88,7 +93,7 @@ To download and save data from BCCDC, use `get_data()`
 ``` r
 all_data <- get_data()
 head(all_data)
-#> # A tibble: 6 × 5
+#> # A tibble: 6 x 5
 #>   Reported_Date HA                Sex   Age_Group Classification_Reported
 #>   <date>        <chr>             <chr> <chr>     <chr>                  
 #> 1 2020-01-29    Out of Canada     M     40-49     Lab-diagnosed          
@@ -132,7 +137,7 @@ To plot a histogram by Age, use
 plot_hist_by_cond("2021-01-01", "2021-01-30", "Age")
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="80%" />
+<img src="man/figures/unnamed-chunk-4-1.png" width="80%" />
 
 To plot a time-series line chart, use
 `plot_line_by_date(startDate, endDate)`
@@ -141,7 +146,7 @@ To plot a time-series line chart, use
 plot_line_by_date("2021-01-01", "2021-01-30")
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="80%" />
+<img src="man/figures/unnamed-chunk-5-1.png" width="80%" />
 
 ## **Role within R Ecosystem**
 

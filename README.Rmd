@@ -8,25 +8,28 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-",
+  fig.path = "man/figures/",
   fig.width = 8,
   fig.asp = 0.8,
   out.width = "80%"
 )
 ```
 
+<img src="man/figures/rbc_logo.png" align="left" height="50"/>
+
 # rbccovideda
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/UBC-MDS/rbccovideda/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rbccovideda/actions)
-[![codecov](https://codecov.io/gh/UBC-MDS/rbccovideda/branch/main/graph/badge.svg?token=BHMAm2mkUK)](https://codecov.io/gh/UBC-MDS/rbccovideda)
+[![R-CMD-check](https://github.com/UBC-MDS/rbccovideda/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rbccovideda/actions) [![codecov](https://codecov.io/gh/UBC-MDS/rbccovideda/branch/main/graph/badge.svg?token=BHMAm2mkUK)](https://codecov.io/gh/UBC-MDS/rbccovideda)
 
 <!-- badges: end -->
 
-**Authors**:  Lianna Hovhannisyan, John Lee, Vadim Taskaev, Vanessa Yuen
+**Authors**: Lianna Hovhannisyan, John Lee, Vadim Taskaev, Vanessa Yuen
 
-The British Columbia Center for Disease Control (BCCDC) manages a range of provincial programs and clinics that contribute to public health and help control the spread of disease in BC. It administers and distributes the latest daily data on COVID-19 in British Columbia, which it provides in csv format along case-, lab- and regional-specific features as well as in comprehensive ArcGIS format via the [COVID-19 webpage](http://www.bccdc.ca/health-info/diseases-conditions/covid-19/data) (under "Download the data"). This package leverages daily case-specific COVID-19 data, allowing users to conveniently download the latest case data, and - per specified date range interval - compute several key statistics, visualize time series progression along age-related and regional parameters, and generate exploratory data analysis in the form of histogram figures supporting on-demand analysis. COVID-19 case detail parameters extracted using this package:
+The British Columbia Center for Disease Control (BCCDC) manages a range of provincial programs and clinics that contribute to public health and help control the spread of disease in BC. It administers and distributes the latest daily data on COVID-19 in British Columbia, which it provides in csv format along case-, lab- and regional-specific features as well as in comprehensive ArcGIS format via the [COVID-19 webpage](http://www.bccdc.ca/health-info/diseases-conditions/covid-19/data) (under "Download the data").
+
+[rbccovideeda](https://ubc-mds.github.io/rbccovideda) leverages daily case-specific COVID-19 data, allowing users to conveniently download the latest case data, and - per specified date range interval - compute several key statistics, visualize time series progression along age-related and regional parameters, and generate exploratory data analysis in the form of histogram figures supporting on-demand analysis. COVID-19 case detail parameters extracted using this package:
 
 -   Reported_Date (in YYYY-MM-DD format)
 -   HA (provincial health region, e.g., "Vancouver Coast Health")
@@ -36,7 +39,7 @@ The British Columbia Center for Disease Control (BCCDC) manages a range of provi
 
 ## Installation
 
-You can install the development version of `rbccovideda` from [GitHub](https://github.com/) with:
+You can install the development version of [rbccovideda](https://ubc-mds.github.io/rbccovideda) from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -63,7 +66,7 @@ devtools::install_github("UBC-MDS/rbccovideda")
 
 ## Usage
 
-`rbccovideda` can be used to download and compute summary statistics, generate exploratory data analysis histogram plots, and plot time series chart data as follows:
+[rbccovideda](https://ubc-mds.github.io/rbccovideda/) can be used to download and compute summary statistics, generate exploratory data analysis histogram plots, and plot time series chart data as follows:
 
 ```{r example}
 ## load library
@@ -72,32 +75,35 @@ library(dplyr, warn.conflicts = FALSE)
 ```
 
 To download and save data from BCCDC, use `get_data()`
+
 ```{r}
 all_data <- get_data()
 head(all_data)
 ```
+
 To generate summary statistics, call `show_summary_stat(startDate, endDate)`
+
 ```{r}
 summary <- show_summary_stat("2022-01-01", "2022-01-31")
 # to show the 15-columns tibble in a nice way
 glimpse(summary)
 ```
+
 To plot a histogram by Age, use `plot_hist_by_cond("2021-01-01", "2021-12-31", "Age")`
+
 ```{r}
 plot_hist_by_cond("2021-01-01", "2021-01-30", "Age")
 ```
 
-
 To plot a time-series line chart, use `plot_line_by_date(startDate, endDate)`
+
 ```{r}
 plot_line_by_date("2021-01-01", "2021-01-30")
 ```
 
-
 ## **Role within R Ecosystem**
 
 Given the relatively adequate accessibility of latest aggregate COVID-19 data combined with its persistent impact on socio-economics since early 2020, there are some 40 related packages found in CRAN at time as of January 2022. Examples of API wrapper packages that retrieve COVID-19 data include [canadacovid](https://github.com/taylordunn/canadacovid) and [covidregionaldata](https://github.com/epiforecasts/covidregionaldata/), while others provide functions to retrieve data, display summary statistics and generate plots, such as [nCov2019](https://github.com/YuLab-SMU/nCov2019) and [covid19.analytic](https://github.com/mponce0/covid19.analytic). In contrast to these existing packages, `rbccovideda` provides a simple user interface that focuses on the localized provincial context of British Columbia, utilizing features specific to BCCDC's data administration conventions for generating a quick overview and on-demand analysis of trends and statistics pertaining to age-related and regional case characteristics.
-
 
 ## Contributing
 
@@ -114,8 +120,8 @@ Group 25 Contributors:
 
 ## License
 
-The `rbccovideda` project was created by DSCI 524 (Collaborative Software Development) Group 25 within the Master of Data Science program at the University of British Columbia (2021-2022). It is licensed under the terms of the MIT license.  
+The `rbccovideda` project was created by DSCI 524 (Collaborative Software Development) Group 25 within the Master of Data Science program at the University of British Columbia (2021-2022). It is licensed under the terms of the MIT license.
 
 ## Credits
 
-[R Packages](<https://r-pkgs.org/>), DSCI 524 Course Material (UBC MDS)
+[R Packages](https://r-pkgs.org/), DSCI 524 Course Material (UBC MDS)
