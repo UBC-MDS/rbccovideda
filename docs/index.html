@@ -55,7 +55,14 @@
   </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/UBC-MDS/rbccovideda/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -67,13 +74,17 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
+
+<p><img src="reference/figures/rbc_logo.png" align="left" height="50"></p>
 <div class="section level1">
 <div class="page-header"><h1 id="rbccovideda">rbccovideda<a class="anchor" aria-label="anchor" href="#rbccovideda"></a>
 </h1></div>
 <!-- badges: start -->
+
 <!-- badges: end -->
 <p><strong>Authors</strong>: Lianna Hovhannisyan, John Lee, Vadim Taskaev, Vanessa Yuen</p>
-<p>The British Columbia Center for Disease Control (BCCDC) manages a range of provincial programs and clinics that contribute to public health and help control the spread of disease in BC. It administers and distributes the latest daily data on COVID-19 in British Columbia, which it provides in csv format along case-, lab- and regional-specific features as well as in comprehensive ArcGIS format via the <a href="http://www.bccdc.ca/health-info/diseases-conditions/covid-19/data" class="external-link">COVID-19 webpage</a> (under “Download the data”). This package leverages daily case-specific COVID-19 data, allowing users to conveniently download the latest case data, and - per specified date range interval - compute several key statistics, visualize time series progression along age-related and regional parameters, and generate exploratory data analysis in the form of histogram figures supporting on-demand analysis. COVID-19 case detail parameters extracted using this package:</p>
+<p>The British Columbia Center for Disease Control (BCCDC) manages a range of provincial programs and clinics that contribute to public health and help control the spread of disease in BC. It administers and distributes the latest daily data on COVID-19 in British Columbia, which it provides in csv format along case-, lab- and regional-specific features as well as in comprehensive ArcGIS format via the <a href="http://www.bccdc.ca/health-info/diseases-conditions/covid-19/data" class="external-link">COVID-19 webpage</a> (under “Download the data”).</p>
+<p><a href="https://ubc-mds.github.io/rbccovideda" class="external-link">rbccovideeda</a> leverages daily case-specific COVID-19 data, allowing users to conveniently download the latest case data, and - per specified date range interval - compute several key statistics, visualize time series progression along age-related and regional parameters, and generate exploratory data analysis in the form of histogram figures supporting on-demand analysis. COVID-19 case detail parameters extracted using this package:</p>
 <ul>
 <li>Reported_Date (in YYYY-MM-DD format)</li>
 <li>HA (provincial health region, e.g., “Vancouver Coast Health”)</li>
@@ -84,7 +95,7 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of <code>rbccovideda</code> from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>You can install the development version of <a href="https://ubc-mds.github.io/rbccovideda" class="external-link">rbccovideda</a> from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"UBC-MDS/rbccovideda"</span><span class="op">)</span></code></pre></div>
@@ -122,7 +133,7 @@
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p><code>rbccovideda</code> can be used to download and compute summary statistics, generate exploratory data analysis histogram plots, and plot time series chart data as follows:</p>
+<p><a href="https://ubc-mds.github.io/rbccovideda/" class="external-link">rbccovideda</a> can be used to download and compute summary statistics, generate exploratory data analysis histogram plots, and plot time series chart data as follows:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## load library</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">rbccovideda</span><span class="op">)</span>
@@ -147,29 +158,29 @@
 <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">summary</span><span class="op">)</span>
 <span class="co">#&gt; Rows: 1</span>
 <span class="co">#&gt; Columns: 15</span>
-<span class="co">#&gt; $ total_cases_count        &lt;int&gt; 325851</span>
-<span class="co">#&gt; $ latest_date              &lt;date&gt; 2022-01-31</span>
-<span class="co">#&gt; $ latest_daily_cases_count &lt;int&gt; 1050</span>
+<span class="co">#&gt; $ total_cases_count        &lt;int&gt; 327625</span>
+<span class="co">#&gt; $ latest_date              &lt;date&gt; 2022-02-01</span>
+<span class="co">#&gt; $ latest_daily_cases_count &lt;int&gt; 1695</span>
 <span class="co">#&gt; $ max_date                 &lt;date&gt; 2021-12-31</span>
 <span class="co">#&gt; $ max_daily_cases_count    &lt;int&gt; 4078</span>
 <span class="co">#&gt; $ min_date                 &lt;date&gt; 2020-01-29</span>
 <span class="co">#&gt; $ min_daily_cases_count    &lt;int&gt; 1</span>
 <span class="co">#&gt; $ max_age_group            &lt;chr&gt; "20-29"</span>
-<span class="co">#&gt; $ max_age_group_count      &lt;int&gt; 67088</span>
+<span class="co">#&gt; $ max_age_group_count      &lt;int&gt; 67347</span>
 <span class="co">#&gt; $ min_age_group            &lt;chr&gt; "Unknown"</span>
-<span class="co">#&gt; $ min_age_group_count      &lt;int&gt; 89</span>
+<span class="co">#&gt; $ min_age_group_count      &lt;int&gt; 90</span>
 <span class="co">#&gt; $ max_region               &lt;chr&gt; "Fraser"</span>
-<span class="co">#&gt; $ max_region_count         &lt;int&gt; 151762</span>
+<span class="co">#&gt; $ max_region_count         &lt;int&gt; 152269</span>
 <span class="co">#&gt; $ min_region               &lt;chr&gt; "Out of Canada"</span>
-<span class="co">#&gt; $ min_region_count         &lt;int&gt; 355</span></code></pre></div>
+<span class="co">#&gt; $ min_region_count         &lt;int&gt; 353</span></code></pre></div>
 <p>To plot a histogram by Age, use <code>plot_hist_by_cond("2021-01-01", "2021-12-31", "Age")</code></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/plot_hist_by_cond.html">plot_hist_by_cond</a></span><span class="op">(</span><span class="st">"2021-01-01"</span>, <span class="st">"2021-01-30"</span>, <span class="st">"Age"</span><span class="op">)</span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="80%"></p>
+<p><img src="reference/figures/unnamed-chunk-4-1.png" width="80%"></p>
 <p>To plot a time-series line chart, use <code>plot_line_by_date(startDate, endDate)</code></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/plot_line_by_date.html">plot_line_by_date</a></span><span class="op">(</span><span class="st">"2021-01-01"</span>, <span class="st">"2021-01-30"</span><span class="op">)</span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-5-1.png" width="80%"></p>
+<p><img src="reference/figures/unnamed-chunk-5-1.png" width="80%"></p>
 </div>
 <div class="section level2">
 <h2 id="role-within-r-ecosystem">
@@ -204,10 +215,19 @@
 <p><a href="https://r-pkgs.org/" class="external-link">R Packages</a>, DSCI 524 Course Material (UBC MDS)</p>
 </div>
 </div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="license">
+    <div class="links">
+<h2 data-toc-skip>Links</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/UBC-MDS/rbccovideda/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/UBC-MDS/rbccovideda/issues" class="external-link">Report a bug</a></li>
+</ul>
+</div>
+
+<div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
@@ -240,7 +260,13 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/UBC-MDS/rbccovideda/actions" class="external-link"><img src="https://github.com/UBC-MDS/rbccovideda/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://codecov.io/gh/UBC-MDS/rbccovideda" class="external-link"><img src="https://codecov.io/gh/UBC-MDS/rbccovideda/branch/main/graph/badge.svg?token=BHMAm2mkUK" alt="codecov"></a></li>
+</ul>
+</div>
 
   </div>
 </div>

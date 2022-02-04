@@ -33,3 +33,5 @@ Suggests:
     knitr,
     covr
 VignetteBuilder: knitr
+URL: https://github.com/UBC-MDS/rbccovideda
+BugReports: https://github.com/UBC-MDS/rbccovideda/issues
