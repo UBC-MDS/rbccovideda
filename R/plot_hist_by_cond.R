@@ -45,7 +45,7 @@ plot_hist_by_cond <- function(startDate, endDate, condition) {
 
   covid <- get_data()
 
-  temp <- covid |>
+  temp <- covid %>%
     subset(Reported_Date >= lubridate::ymd(startDate) & Reported_Date <= lubridate::ymd(endDate))
 
   age_order <- c(
@@ -58,7 +58,7 @@ plot_hist_by_cond <- function(startDate, endDate, condition) {
   )
 
   if (condition == "Age") {
-    plot <- temp |>
+    plot <- temp %>%
       ggplot2::ggplot() +
       ggplot2::aes(y = factor(Age_Group, levels = rev(age_order))) +
       ggplot2::geom_bar(stat = 'count') +
@@ -69,7 +69,7 @@ plot_hist_by_cond <- function(startDate, endDate, condition) {
   }
 
   if (condition == "Region") {
-    plot <- temp |>
+    plot <- temp %>%
       ggplot2::ggplot() +
       ggplot2::aes(y = factor(HA, levels = rev(region_order))) +
       ggplot2::geom_bar(stat = 'count') +

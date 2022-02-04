@@ -50,14 +50,14 @@ show_summary_stat <- function(startDate, endDate) {
   total_cases_count <- nrow(df)
 
   # count by Reported Date
-  df_by_count <- df |>
-    dplyr::group_by(Reported_Date) |>
+  df_by_count <- df %>%
+    dplyr::group_by(Reported_Date) %>%
     dplyr::summarize(count = dplyr::n())
 
 
   # latest_date, latest_daily_cases_count
   bycount_len <- nrow(df_by_count)
-  latest_record <- df_by_count |>
+  latest_record <- df_by_count %>%
     dplyr::slice(bycount_len)
   latest_date <- latest_record$Reported_Date
   latest_daily_cases_count <- latest_record$count
@@ -65,55 +65,55 @@ show_summary_stat <- function(startDate, endDate) {
   # max_date, max_daily_cases_count
   max_daily_cases_count <- max(df_by_count$count)
   index <- which.max(df_by_count$count)
-  max_date <- df_by_count |>
-    dplyr::slice(index) |>
+  max_date <- df_by_count %>%
+    dplyr::slice(index) %>%
     dplyr::pull(Reported_Date)
 
   # min_date, min_daily_cases_count
   min_daily_cases_count <- min(df_by_count$count)
   index <- which.min(df_by_count$count)
-  min_date <- df_by_count |>
-    dplyr::slice(index) |>
+  min_date <- df_by_count %>%
+    dplyr::slice(index) %>%
     dplyr::pull(Reported_Date)
 
 
   # count by Age Group
-  df_by_age <- df |>
-    dplyr::group_by(Age_Group) |>
+  df_by_age <- df %>%
+    dplyr::group_by(Age_Group) %>%
     dplyr::summarize(count = dplyr::n())
 
 
   # max_age_group, max_age_group_count
   max_age_group_count <- max(df_by_age$count)
   index <- which.max(df_by_age$count)
-  max_age_group <- df_by_age |>
-    dplyr::slice(index) |>
+  max_age_group <- df_by_age %>%
+    dplyr::slice(index) %>%
     dplyr::pull(Age_Group)
 
   # min_age_group, min_age_group_count
   min_age_group_count <- min(df_by_age$count)
   index <- which.min(df_by_age$count)
-  min_age_group <- df_by_age |>
-    dplyr::slice(index) |>
+  min_age_group <- df_by_age %>%
+    dplyr::slice(index) %>%
     dplyr::pull(Age_Group)
 
   # count by region
-  df_by_region <- df |>
-    dplyr::group_by(HA) |>
+  df_by_region <- df %>%
+    dplyr::group_by(HA) %>%
     dplyr::summarize(count = dplyr::n())
 
   # max_region, max_region_count
   max_region_count <- max(df_by_region$count)
   index <- which.max(df_by_region$count)
-  max_region <- df_by_region |>
-    dplyr::slice(index) |>
+  max_region <- df_by_region %>%
+    dplyr::slice(index) %>%
     dplyr::pull(HA)
 
   # min_region, min_region_count
   min_region_count <- min(df_by_region$count)
   index <- which.min(df_by_region$count)
-  min_region <- df_by_region |>
-    dplyr::slice(index) |>
+  min_region <- df_by_region %>%
+    dplyr::slice(index) %>%
     dplyr::pull(HA)
 
 

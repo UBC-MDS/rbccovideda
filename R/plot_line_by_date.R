@@ -69,11 +69,11 @@ plot_line_by_date <- function(startDate, endDate, region='all') {
 
    # filter the data
    if (length(region) == 1 & region[1] == "all") {
-     mask <- covid |>
+     mask <- covid %>%
        dplyr::filter(Reported_Date >= "2021-01-01" &
                      Reported_Date <= "2021-12-31")
    } else {
-     mask <- covid |>
+     mask <- covid %>%
        dplyr::filter(HA %in% region &
                        Reported_Date >= "2020-01-01" &
                        Reported_Date < "2021-12-30")
