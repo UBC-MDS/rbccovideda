@@ -66,6 +66,8 @@ devtools::install_github("UBC-MDS/rbccovideda")
 
 ## Usage
 
+Details documentation can be found on our Github page: <https://ubc-mds.github.io/rbccovideda/>
+
 [rbccovideda](https://ubc-mds.github.io/rbccovideda/) can be used to download and compute summary statistics, generate exploratory data analysis histogram plots, and plot time series chart data as follows:
 
 ```{r example}
