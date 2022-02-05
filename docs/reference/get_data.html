@@ -37,7 +37,13 @@
       <a href="../articles/rbccovideda-vignette.html">Introduction to rbccovideda</a>
     </li>
   </ul></li>
-      </ul><ul class="nav navbar-nav navbar-right"></ul></div><!--/.nav-collapse -->
+      </ul><ul class="nav navbar-nav navbar-right"><li>
+  <a href="https://github.com/UBC-MDS/rbccovideda/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
@@ -47,7 +53,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Download and save Covid19 data</h1>
-    
+    <small class="dont-index">Source: <a href="https://github.com/UBC-MDS/rbccovideda/blob/HEAD/R/get_data.R" class="external-link"><code>R/get_data.R</code></a></small>
     <div class="hidden name"><code>get_data.Rd</code></div>
     </div>
 
@@ -82,7 +88,7 @@ separated by a forward slash ("/"), provided with a default value.</p></dd>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">get_data</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 325,851 x 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 330,638 x 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    Reported_Date HA                Sex   Age_Group Classification_Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2020-01-29    Out of Canada     M     40-49     Lab-diagnosed          </span>
@@ -95,12 +101,12 @@ separated by a forward slash ("/"), provided with a default value.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2020-03-03    Fraser            M     50-59     Lab-diagnosed          </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2020-03-03    Vancouver Coastal F     60-69     Lab-diagnosed          </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2020-03-03    Vancouver Coastal F     30-39     Lab-diagnosed          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ... with 325,841 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ... with 330,628 more rows</span></span>
 <span class="r-in"><span class="fu">get_data</span><span class="op">(</span></span>
 <span class="r-in">  url <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"http://www.bccdc.ca/Health-Info-Site/"</span>,</span>
 <span class="r-in">    <span class="st">"Documents/BCCDC_COVID19_Dashboard_Case_Details.csv"</span><span class="op">)</span>,</span>
 <span class="r-in">  out <span class="op">=</span> <span class="st">"data"</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 325,851 x 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 330,638 x 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    Reported_Date HA                Sex   Age_Group Classification_Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2020-01-29    Out of Canada     M     40-49     Lab-diagnosed          </span>
@@ -113,7 +119,7 @@ separated by a forward slash ("/"), provided with a default value.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2020-03-03    Fraser            M     50-59     Lab-diagnosed          </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2020-03-03    Vancouver Coastal F     60-69     Lab-diagnosed          </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2020-03-03    Vancouver Coastal F     30-39     Lab-diagnosed          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ... with 325,841 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ... with 330,628 more rows</span></span>
 </code></pre></div>
     </div>
   </div>
